@@ -3,8 +3,16 @@
 
 CFLAGS=-Wall -O3
 
-all:	nonblocking
+PROG=nonblocking
 
+.PHONY: all
+all:	$(PROG)
+
+.PHONY: install
 install:
-	cp nonblocking "$(HOME)/bin/"
+	cp $(PROG) "$(HOME)/bin/"
+
+.PHONY: clean distclean
+clean distclean:
+	rm -f *.o *~ $(PROG)
 
